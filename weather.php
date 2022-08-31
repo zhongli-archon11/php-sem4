@@ -7,6 +7,7 @@
 
     echo $json_data->weather->main;
     echo "Location(lon, lat)= (".$json_data->coord->lon.", ".$json_data->coord->lat.")";
-    $cels=($json_data->main->temp- 32)*5/9;
-    echo "<br>Temperature= ".$json_data->main->temp."&#8457;/".round($cels,2)."&#8451;<br>";
+    $cels=$json_data->main->temp- 273.15;
+    echo "<br>Temperature= ".$json_data->main->temp."K/".round($cels,2)."&#8451;<br>";
+    echo "Sky: ".$json_data->weather->description;
 ?>
